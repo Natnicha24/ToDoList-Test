@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# 📝 ToDoList Test Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple **To-Do List Web Application** built with React and TypeScript. The app allows users to create, edit, delete, and toggle tasks's status to done and not done. It also integrates with a mock API (jsonplaceholder) to demonstrate data fetching, error handling, and loading states.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Add / Edit / Delete ToDo items
+- 🔁 Toggle between **Done / Not Done**
+- 🌀 Show **loading** and **error** states during data fetching
+- 🌐 Fetch initial tasks from `JSONPlaceholder` API
+- 📦 Manage state with **Context API**
+- 💅 Styled with **TailwindCSS**
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** with **TypeScript**
+- **Context API** for global state management
+- **TailwindCSS** for styling
+- **Fetch API** for calling mock data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/todos)
 
-- Configure the top-level `parserOptions` property like this:
+## 🧑‍💻 How to Run This Project
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 1. Clone the repository
+git clone https://github.com/Natnicha24/ToDoList-Test.git
+cd ToDoList-Test
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install dependencies
+npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 3. Start the development server
+npm run dev
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🌐Reason Behind Implement Choices
+
+### 1. Context Api
+-ใช้ context เพื่อลดการส่งต่อแบบ local state รวม function ที่ต้องใช้ในหลายไฟล์ไว้ที่เดียวและใช้ได้ทั่วทั้งโปรเจค
+
+### 2. TailwindCSS
+-เลือก TailwindCSS เพื่อจัดการ style ได้ง่าย ไม่ต้องเขียน external css ทำให้ง่ายเสร็จไวขึ้น
+
+### 3. Fetch API + JSONPlaceholder
+-ใช้ fetch ดึงข้อมูลจาก JSONPlaceholder เพื่อเชื่อม API จริงและจัดการกับ loading และ error
+
+### 4. การแสดง Loading / Error
+-ใช้ useEffect + try/catch เพื่อจัดการ error และ loading
